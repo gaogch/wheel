@@ -62,14 +62,19 @@
             $(".wheel").mousemove(function(e){
                 e.preventDefault();
             });
+
             var marginL;
             var num = 0;
+
+
             touch.on("body","dragstart",".box",function(e){
                 $(".box").css({
                     transition:"none"
                 });
                 marginL = parseInt($(".box").css("marginLeft"))?parseInt($(".box").css("marginLeft")):0;
             });
+
+
 
             touch.on("body","drag",".box",function(e){
                 $(".box").css({
@@ -96,13 +101,14 @@
                     })
                 }else{
                     $(".box").css({
-                        marginLeft:num*width,
+                        marginLeft:-num*width,
                         transition:"margin-left 1s ease"
                     })
                 }
             })
         })
     </script>
+
 </head>
 <body>
     <div class="wheel">
